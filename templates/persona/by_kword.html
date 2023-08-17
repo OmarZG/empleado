@@ -1,0 +1,16 @@
+<h1>Buscar empelado por palabra clave</h1>
+<form  method="GET">{% csrf_token %}
+    <input type="text" name="kword" id="kword" placeholder="Ingrese nombre aqui">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if empleado %}
+    <h3>Lista resultados</h3>
+    <lu>
+        {% for e in  empleado %}
+            <li>
+                {{e}}
+            </li>
+        {% endfor %}
+    </lu>
+{% endif %}
